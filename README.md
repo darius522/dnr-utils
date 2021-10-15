@@ -1,4 +1,7 @@
 # Divide and Remaster Utility Scripts
+<p align="center">
+  <img src="./assets/cocktail_force.pdf" title="hover text">
+</p>
 Utility tools for the "Divide and Remaster" dataset, introduced as part of the Cocktail Fork problem paper
 
 The DnR dataset is build from three, well-established, audio datasets; [Librispeech](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7178964), [Free Music Archive (FMA)](https://arxiv.org/pdf/1612.01840.pdf), and [Freesound Dataset 50k (FSD50K)](https://arxiv.org/pdf/2010.00475.pdf). We offer our dataset in both 16kHz and 44.1kHz sampling-rate along time-stamped annotations for each of the classes (genre for 'music', audio-tags for 'sound-effects', and transcription for 'speech'). We provide below more informations on how the dataset is build and what it's consists of exactly. We also go over the process of building the dataset from scratch for the cases it needs to.
