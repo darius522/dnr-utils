@@ -108,38 +108,5 @@ python compile_dataset.py with cfg.eval
 
 -----
 
-<h2 id="analysis">Dataset Analysis</h2>
-The file length distributions of the four DnR building blocks are as follows. Note that FMA files occupy a single bin since all files are 30-sec length:
-
-<p align="center">
-  <img src="./assets/filelengths.pdf" title="hover text">
-</p>
-
-<br><br>
-
-We also measure the amount of inter-classes overlap, here for the whole DnR training set. Through the building process, we ensure to cover all overlapping scenarios, while emphasizing on the "all-classes" one (accounting for 50% of the data):
-
-<p align="center">
-  <img src="./assets/data_stats.png" title="hover text">
-</p>
-
-The average length per class files are also provided down below:
-
-<p align="center">
-  <img src="./assets/avg_len_files.png" title="hover text">
-</p>
-
-Annotations for each class are provided with time-stamps:
-
-<p align="center">
-  <img src="./assets/annots.png" title="hover text">
-</p>
-
-<hr />
-
------
-
------
-
 <h2 id="contact">Contact and Support</h2>
 
