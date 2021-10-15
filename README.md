@@ -1,6 +1,6 @@
 # Divide and Remaster Utility Scripts
 
-![CFP Icon](/assets/cocktail_force.pdf)
+![CFP Icon](/assets/cocktail_force.jpg)
 
 Utility tools for the "Divide and Remaster" dataset, introduced as part of the Cocktail Fork problem paper
 
