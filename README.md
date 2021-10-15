@@ -9,6 +9,7 @@ The DnR dataset is build from three, well-established, audio datasets; [Librispe
 *   [Get the DnR Dataset](#getdnr)
     *   [Download](#download)
     *   [Building DnR From Scratch](#scratch)
+    *   [Known Issues](#issues)
 *   [Resources and Support](#contact)
 
 -----
@@ -105,6 +106,8 @@ python compile_dataset.py with cfg.val
 ```
 python compile_dataset.py with cfg.eval
 ```
+
+<h3 id="issues">Known Issues</h3>
 
 -----
 
