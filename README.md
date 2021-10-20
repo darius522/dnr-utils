@@ -1,4 +1,4 @@
-# Divide and Remaster Utility Scripts
+# Divide and Remaster Utility Tools
 
 ![CFP Icon](/assets/cocktail_force.jpg)
 
@@ -26,15 +26,17 @@ The Divide and Remix (DnR) dataset is a dataset aiming at providing research sup
 In order to obtain DnR, several options are available depending on the task at hand:
 <h3 id="download">Download</h3>
 
-- DnR-HQ (44.1kHz) is available on Zenodo at the [following](#dummy) or simply run:
+- DnR-HQ (44.1kHz) is available on Zenodo at the [following](https://www.zenodo.org) or simply run:
 ```
-wget link_to_zenodo_dnr
+link to the Zenodo dataset coming soon ...
 ```
 
-- Alternatively, if DnR-16kHz is needed, please first download or build DnR-HQ locally. You can then downsample the dataset (either in-place or not) by running:
+- Alternatively, if DnR-16kHz is needed, please first download DnR-HQ locally. You can then downsample the dataset (either in-place or not) by cloning the [dnr-utils](https://github.com/darius522/dnr-utils) repository and running:
 ```
 python dnr_utils.py --task=downsample --inplace=True
 ```
+
+-----
 
 <h3 id="scratch">Building DnR From Scratch</h3>
 In the section, we go over the DnR building process. Since DnR is directly drawn from *FSD50K*, *LibriSpeech*/*LibriVox*, and *FMA, we first need to download these datasets. Please head to the following links for more details on how to get them:
@@ -43,11 +45,11 @@ In the section, we go over the DnR building process. Since DnR is directly drawn
 
 <p align="center">
 
-:police_car: <a href="https://zenodo.org/record/4060432#.YTkaoN8pBPY">FSD50K</a> :police_car:
+<a href="https://zenodo.org/record/4060432#.YTkaoN8pBPY">FSD50K</a>
 <br>
-:notes: <a href="https://github.com/mdeff/fma">FMA-Medium Set</a> :notes:
+<a href="https://github.com/mdeff/fma">FMA-Medium Set</a>
 <br>
-:speaking_head: <a href="https://www.openslr.org/12">LibriSpeech/LibriVox</a> :speaking_head:
+<a href="https://www.openslr.org/12">LibriSpeech/LibriVox</a>
 
 <br><br>
 </p>
@@ -88,11 +90,13 @@ root
 <h4 id="scratch">Datasets Standardization</h4>
 
 Once all four datasets are downloaded, some standardization work needs to be taken care of. The standardization process can be be executed by running [`standardization.py`](https://github.com/darius522/dnr-utils/blob/d895d485bb6d2bde9d7a79faaa7a12172d45b375/standardization.py), which can be found in the [dnr-utils](https://github.com/darius522/dnr-utils) repository. Prior to running the script you may want to install all the necessary dependencies included as part of the `requirement.txt` with `pip install -r requirements.txt`. 
-__Note:__ `pydub` uses `ffmpeg` under its hood, a system install of `fmmpeg` is thus required.
+__Note:__ `pydub` uses `ffmpeg` under its hood, a system install of `fmmpeg` is thus required. Please see [pydub's install instructions](https://github.com/jiaaro/pydub#installation) for more information.
 The standardization command may look something like:
 ```
 python standardization.py --fsd50k-path=./FSD50K --fma-path=./FMA --librivox-path=./LibriVox --librispeech-path=./LibiSpeech  --dest-dir=./dest --validate-audio=True
 ```
+
+-----
 
 <h4 id="scratch">DnR Dataset Compilation</h4>
 
@@ -112,7 +116,19 @@ python compile_dataset.py with cfg.eval
 
 <h3 id="issues">Known Issues</h3>
 
+Some known bugs and issues that we're aware. if not listed below, feel free to open a new issue [here](https://github.com/darius522/dnr-utils/issues):
+
+* If building from scratch, `pydub ` will fail at reading 15 mp3 files from the FMA medium-set and will return the following error:  `mp3 @ 0x559b8b084880] Failed to read frame size: Could not seek to 1026.`
+
+* If building DnR from scratch, the script may return the following error, coming from `pyloudnorm`: `Audio must be have length greater than the block size`. That's because some audio segment, especially SFX events, may be shorter than 0.2 seconds, which is the minimum sample length (window) required by `pyloudnorm` for normalizing the audio. We just ignore these segments.
+
 -----
 
 <h2 id="contact">Contact and Support</h2>
+
+Have an issue, concern, or question about DnR or its utility tools ? If so, please open an issue [here](https://github.com/darius522/dnr-utils/issues)
+
+For any other inquiries, feel free to shoot an email at: __firstname.lastname@gmail.com__, my name is Darius Petermann ;)
+
+-----
 
