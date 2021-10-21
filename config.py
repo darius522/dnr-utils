@@ -8,8 +8,8 @@ def cfg():
     dst_config =   {"partition": "train", # train, val, eval
 
                     # Directories
-                    "source_root": "./_dummy/dest/", # Where the output of the standardization process resides
-                    "output_dir": "./_dummy/dest/DNR", # Where the new dataset will be compiled
+                    "source_root": "./", # Where the output of the standardization process resides
+                    "output_dir": "./DNR", # Where the new dataset will be compiled
 
                     # Processing parameters
                     "lufs_music": -24,
