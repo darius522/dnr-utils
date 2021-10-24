@@ -14,6 +14,7 @@ The DnR dataset is build from three, well-established, audio datasets; [Librispe
     *   [Building DnR From Scratch](#scratch)
     *   [Known Issues](#issues)
 *   [Resources and Support](#contact)
+*   [Citation](#citation)
 
 -----
 
@@ -129,6 +130,23 @@ Some known bugs and issues that we're aware. if not listed below, feel free to o
 Have an issue, concern, or question about DnR or its utility tools ? If so, please open an issue [here](https://github.com/darius522/dnr-utils/issues)
 
 For any other inquiries, feel free to shoot an email at: __firstname.lastname@gmail.com__, my name is Darius Petermann ;)
+
+-----
+
+<h2 id="citation">Citation</h2>
+
+If you use DnR please cite [our paper](https://arxiv.org/abs/2110.09958) in which we introduce the dataset as part of the *Cocktail Fork Problem*:
+
+```
+@article{Petermann2021cocktail,
+    title={The Cocktail Fork Problem: Three-Stem Audio Separation for Real-World Soundtracks}, 
+    author={Darius Petermann and Gordon Wichern and Zhong-Qiu Wang and Jonathan {Le Roux}},
+    year={2021},
+    journal={arXiv preprint arXiv:2110.09958},
+    archivePrefix={arXiv},
+    primaryClass={eess.AS}
+}
+```
 
 -----
 
