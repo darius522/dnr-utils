@@ -27,10 +27,11 @@ The Divide and Remaster (DnR) dataset is a dataset aiming at providing research 
 In order to obtain DnR, several options are available depending on the task at hand:
 <h3 id="download">Download</h3>
 
-- DnR-HQ (44.1kHz) is available on Zenodo at the [following](https://www.zenodo.org) or simply run:
+- DnR-HQ (44.1kHz) is available on Zenodo at the [following](https://zenodo.org/record/5574713) or simply run:
 ```
-link to the Zenodo dataset coming soon ...
-```
+curl https://zenodo.org/record/5574713/files/dnr.tar.gz\?download\=1 -o dnr.tar.gz
+```  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or `wget` for the Linux folks.
 
 - Alternatively, if DnR-16kHz is needed, please first download DnR-HQ locally. You can then downsample the dataset (either in-place or not) by cloning the [dnr-utils](https://github.com/darius522/dnr-utils) repository and running:
 ```
