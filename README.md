@@ -33,9 +33,9 @@ curl https://zenodo.org/record/5574713/files/dnr.tar.gz\?download\=1 -o dnr.tar.
 ```  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or `wget` for the Linux folks.
 
-- Alternatively, if DnR-16kHz is needed, please first download DnR-HQ locally. You can then downsample the dataset (either in-place or not) by cloning the [dnr-utils](https://github.com/darius522/dnr-utils) repository and running:
+- Alternatively, if DnR-16kHz is needed, please first download DnR-HQ locally. You can then downsample the dataset by cloning the [dnr-utils](https://github.com/darius522/dnr-utils) repository and running:
 ```
-python dnr_utils.py --task=downsample --inplace=True
+python downsample_dnr.py --src_dir=./dnr_hq --dst_dir=./dnr_16k
 ```
 
 -----
