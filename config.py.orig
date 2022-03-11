@@ -5,11 +5,16 @@ config_ingredient = Ingredient("cfg")
 
 @config_ingredient.config
 def cfg():
-    dst_config =   {"partition": "eval", # train, val, eval
+    dst_config =   {"partition": "train", # train, val, eval
 
                     # Directories
-                    "source_root": "./dest/", # Where the output of the standardization process resides
-                    "output_dir": "../dnr_hq", # Where the new dataset will be compiled
+<<<<<<< HEAD
+                    "source_root": "./dest", # Where the output of the standardization process resides
+                    "output_dir": "./dest/DNR", # Where the new dataset will be compiled
+=======
+                    "source_root": "./", # Where the output of the standardization process resides
+                    "output_dir": "./DNR", # Where the new dataset will be compiled
+>>>>>>> 7291055b780b19a9c6465fe7a9780272b440168a
 
                     # Processing parameters
                     "lufs_music": -24,
@@ -58,5 +63,10 @@ def val():
     print("Computing dataset for val-set")
     dst_config = {
         "partition": "val",
+<<<<<<< HEAD
         "num_files": 487
     }
+=======
+        "num_files": 440
+    }
+>>>>>>> 7291055b780b19a9c6465fe7a9780272b440168a
