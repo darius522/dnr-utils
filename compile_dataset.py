@@ -128,17 +128,18 @@ class MixtureObj():
         min_start = 0.0 if not len(self.allocated_windows[c]['times'])\
                         else np.ceil(np.sum(self.allocated_windows[c]['times'][-1]))
 
-        # Check if we have enough time remaining (at least 30% length of current file)
-        if (self.seq_dur - min_start <= file_len * 0.3):
+        # Check if we have enough time remaining (at least 30% length of current file or for speech the ENTIRE LENGTH)
+        if (self.seq_dur - min_start <= file_len * 0.3) or (c == 'speech' and (self.seq_dur - min_start <= file_len)):
             return None, None
 
         # Pick start based on previous event pos.
-        start   = min(gen_skewnorm(skew=5, mu=int(min_start + 1), sig=2.0), self.seq_dur - 2.0)
+        end_lim = self.seq_dur - file_len if c == 'speech' else self.seq_dur - 2.0
+        start   = min(gen_skewnorm(skew=5, mu=int(min_start + 1), sig=2.0), end_lim)
         max_len = file_len if self.seq_dur - start >= file_len else (self.seq_dur - start)
 
         # If speech, take the whole thing
         if c == 'speech':
-            length = max_len * 0.99
+            length = max_len
         else:
             length = max(min(gen_norm(mu=max_len/2.0, sig=max_len/10.0), max_len), 0.1)
 
@@ -221,6 +222,9 @@ class MixtureObj():
                     print(e)
                     print('could not register event')
                     print(f, c, s, l, s_clip, l_clip)
+            elif c == 'speech':
+                self.files[c].append(f)
+                
         self.mix_max_peak = max(self.mix_max_peak, np.max(np.abs(submix)))
         self.submixes[c] = submix
 
