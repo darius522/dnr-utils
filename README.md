@@ -135,13 +135,12 @@ For any other inquiries, feel free to shoot an email at: __firstname.lastname@gm
 If you use DnR please cite [our paper](https://arxiv.org/abs/2110.09958) in which we introduce the dataset as part of the *Cocktail Fork Problem*:
 
 ```
-@article{Petermann2021cocktail,
-    title={The Cocktail Fork Problem: Three-Stem Audio Separation for Real-World Soundtracks}, 
-    author={Darius Petermann and Gordon Wichern and Zhong-Qiu Wang and Jonathan {Le Roux}},
-    year={2021},
-    journal={arXiv preprint arXiv:2110.09958},
-    archivePrefix={arXiv},
-    primaryClass={eess.AS}
+@InProceedings{Petermann2022ICASSP05,
+  author =	 {Petermann, Darius and Wichern, Gordon and Wang, Zhong-Qiu and {Le Roux}, Jonathan},
+  title =	 {The Cocktail Fork Problem: Three-Stem Audio Separation for Real-World Soundtracks},
+  booktitle =	 {Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year =	 2022,
+  month =	 may
 }
 ```
 
